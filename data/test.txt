@@ -1,0 +1,9 @@
+What is the standard pattern of orchestrating microservices?
+If a microservice only knows about its own domain, but there is a flow of data that requires that multiple services interact in some manner, what's the way to go about it?
+Let's say we have something like this:
+* Invoicing
+* Shipment
+And for the sake of the argument, let's say that once an an order has been shipped, the invoice should be created.
+Somewhere, someone presses a button in a GUI, "I'm done, let's do this!" In a classic monolith service architecture, I'd say that there is either an ESB handling this, or the Shipment service has knowledge of the invoice service and just calls that.
+But what is the way people deal with this in this brave new world of microservices?
+I do get that this could be considered highly opinion-based. but there is a concrete side to it, as microservices are not supposed to do the above. So there has to be a "what should it by definition do instead", which is not opinion-based.
